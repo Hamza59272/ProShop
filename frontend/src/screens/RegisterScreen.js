@@ -37,7 +37,8 @@ const RegisterScreen = ({ location, history }) => {
   }
 
   return (
-    <FormContainer>
+    <div style={{backgroundColor:'green' , color:'white', maxWidth:'180em' }}>
+    <FormContainer >
       <h1>Sign Up</h1>
       {message && <Message variant='danger'>{message}</Message>}
       {error && <Message variant='danger'>{error}</Message>}
@@ -97,6 +98,7 @@ const RegisterScreen = ({ location, history }) => {
         </Col>
       </Row>
     </FormContainer>
+    </div>
   )
 }
 
