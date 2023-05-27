@@ -15,16 +15,14 @@ var orderRoutes = require('./routes/orderRoutes.js')
 var uploadRoutes = require('./routes/uploadRoutes.js')
 
 dotenv.config()
-var connection = mongoose.connect('mongodb://localhost:27017/proshop', 
-    { useNewUrlParser: true, useUnifiedTopology: true });
-mongoose.set('strictQuery', true);
+const uri = "mongodb+srv://Hamza59204:Hamza59204@proshop.ecfohs3.mongodb.net/?retryWrites=true&w=majority";
+
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('Connected to MongoDB Atlas'))
+  .catch((err) => console.log('Error connecting to MongoDB Atlas:', err));
+
 var app = express();
-connection.then((db) => {
-    console.log("Connected correctly to server");
-  },
-   (err) => {  
-      console.log(err); 
-    });
+
 
 
 
